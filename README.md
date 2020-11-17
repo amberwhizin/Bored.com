@@ -1,1 +1,3 @@
 # Bored.com
+
+Nick Pretel
