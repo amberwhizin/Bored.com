@@ -12,18 +12,10 @@ export default class App extends Component {
   }
   
   render() {
-dani
     return <div>
         <Index />
        
         </div>;
-    return (
-      <div>
-        <input type="text" />
-        <input type="submit" value="here" />
-        Hey!!
-      </div>
-    );
-dev
+
   }
 }
