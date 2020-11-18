@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Index from './components/Index'
 
 export default class App extends Component {
   constructor(props) {
@@ -11,6 +12,11 @@ export default class App extends Component {
   }
   
   render() {
+dani
+    return <div>
+        <Index />
+       
+        </div>;
     return (
       <div>
         <input type="text" />
@@ -18,5 +24,6 @@ export default class App extends Component {
         Hey!!
       </div>
     );
+dev
   }
 }
