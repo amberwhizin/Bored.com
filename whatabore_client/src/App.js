@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import Index from './components/Index'
 
 export default class App extends Component {
   render() {
     return <div>
-        <input type="text" />
-        <input type="submit" value="here"/>
-        Hey!!</div>;
+        <Index />
+       
+        </div>;
   }
 }
