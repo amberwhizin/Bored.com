@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Index from './components/Index'
+import Index from "./components/Index";
 
 export default class App extends Component {
   constructor(props) {
@@ -10,13 +10,8 @@ export default class App extends Component {
       description: "",
     };
   }
-  
+
   render() {
-dani
-    return <div>
-        <Index />
-       
-        </div>;
     return (
       <div>
         <input type="text" />
@@ -24,6 +19,5 @@ dani
         Hey!!
       </div>
     );
-dev
   }
 }
