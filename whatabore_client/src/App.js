@@ -11,14 +11,6 @@ const App = () => {
   const spotify = Credentials();
   console.log(spotify);
 
-  //the data for the drop down genre menu
-  const data = [
-    { value: 1, name: "A" },
-    { value: 2, name: "B" },
-    { value: 3, name: "C" },
-  ];
-
-  //
   const [token, setToken] = useState("");
   const [genres, setGenres] = useState({
     selectedGenre: "",
