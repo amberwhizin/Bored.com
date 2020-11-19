@@ -6,15 +6,6 @@ import Detail from './components/music-components/Detail';
 import { Credentials } from './components/music-components/Credentials';
 import axios from "axios";
 
-export default class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      image: "",
-      description: "",
-    };
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
 
@@ -123,13 +114,6 @@ const [token, setToken] = useState('');
   }
 
   
-
-  
-
-   
-      
-    
-
   
 
   return (
@@ -154,7 +138,6 @@ const [token, setToken] = useState('');
   );
 
 
+
   }
-
-
 export default App;
