@@ -1,44 +1,50 @@
 import React, { Component } from "react";
-import Index from "./components/Index";
-import IMDB from "./components/IMDB";
 
-//const baseURL = "http://localhost:3001"; //spotify URL //heroku  too
+const baseURL = "http://www.omdbapi.com/?";
+const apikey = "apikey=" + "6253ae12";
+const queryTitle = "&t=";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recs: [],
-      //gonna use it in the future?
-      // title: "",
-      // image: "",
-      // description: "",
+      movieTitle: "",
+      searchURL: "",
+      movie: {},
     };
   }
 
-  componentDidMount() {
-    this.getMovies();
-  }
-
-  getMovies = () => {
-    fetch("http://www.omdbapi.com/?apikey=[yourkey]&")
+  getMovies = (e) => {
+    e.preventDefault();
+    const url = baseURL + apikey + queryTitle + "This is the end";
+    fetch(url)
       .then((response) => {
-        console.log(response);
+        return response.json();
       })
-      .catch((err) => {
-        console.error(err);
+      .then((json) => {
+        console.log(json);
       });
   };
 
+  componentDidMount() {
+    // this.getMovies();
+  }
+
   render() {
     return (
-      <>
-        <Index />
-        <IMDB
-          onSubmit={this.handleSubmitMovies}
-          onChange={this.handleChangeMovies}
-        />
-      </>
+      <div>
+        <form onSubmit={this.getMovies}>
+          <label htmlFor="movieTitle">Title</label>
+          <input
+            id="movieTitle"
+            type="text"
+            value={this.state.movieTitle}
+            onChange={this.getMovies}
+          />
+          <input type="submit" value="Find Movie Info" />
+        </form>
+        {/* {this.state.movie ? <Movie movie={this.state.movie} /> : ""} */}
+      </div>
     );
   }
 }
