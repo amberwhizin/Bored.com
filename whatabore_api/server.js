@@ -1,13 +1,14 @@
 const express = require("express");
 var request = require("request");
 const mongoose = require("mongoose");
-require('dotenv').config();
 const app = express();
 const PORT = 3001;
 const session = require('express-session')
 
+const User = require("/Users/nicholaspretel/Documents/GA_Projects/Bored.com/whatabore_api/models/users");
+
+require('dotenv').config();
 const mongo_uri = process.env.mongoURI
-// const User = require('../models/users.js');
 
 // middleware
 app.use(express.json());
@@ -72,18 +73,20 @@ app.get('/api/secret', function(req, res) {
 //LOGIN ROUTE//
 
 // POST route to register a user
-// app.post('/api/register', function(req, res) {
-//   const { email, password } = req.body;
-//   const user = new User({ email, password });
-//   user.save(function(err) {
-//     if (err) {
-//       res.status(500)
-//         .send("Error registering new user please try again.");
-//     } else {
-//       res.status(200).send("Welcome to the club!");
-//     }
-//   });
-// });
+app.post('/api/register', function(req, res) {
+  const { username, password } = req.body;
+  const user = new User({ username, password });
+  console.log(user)
+  user.save(function(err) {
+    if (err) {
+      res.status(500)
+        .send("Error registering new user please try again.");
+    } else {
+      res.status(200).send("Welcome to the club!");
+    }
+  });
+  // console.log(req.body)
+});
 
 
 app.listen(PORT, () => {
@@ -91,3 +94,10 @@ app.listen(PORT, () => {
 });
 
 
+// curl -X POST \
+//   http://localhost:3001/api/register \
+//   -H 'Content-Type: application/json' \
+//   -d '{
+//  "username": "me@example.com",
+//  "password": "mypassword"
+// }'
