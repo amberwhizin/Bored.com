@@ -1,22 +1,28 @@
 const express = require("express");
 var request = require("request");
 const mongoose = require("mongoose");
-require('dotenv').config();
+const methodOverride = require("method-override");
+require("dotenv").config();
 const app = express();
-const PORT = 3001;
-const session = require('express-session')
+const PORT = process.env.PORT || 3001;
+const session = require("express-session");
 
-const mongo_uri = process.env.mongoURI
+const mongo_uri =
+  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
 // const User = require('../models/users.js');
 
 // middleware
+app.use(express.static("public"));
+// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());
-app.use('/index/users', require('./controllers/users_controller'));
+app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
+app.use("/index/users", require("./controllers/users_controller"));
 //secret middelware
 // app.use(
 //   session({
 //     clientSecret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
-//     clientID: process.env.SECRET, 
+//     clientID: process.env.SECRET,
 //     resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
 //     saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
 //   })
@@ -31,7 +37,7 @@ mongoose.connection.on("disconnected", () =>
   console.log("mongo is disconnected")
 );
 
-mongoose.connect(mongo_uri, function(err) {
+mongoose.connect(mongo_uri, function (err) {
   if (err) {
     throw err;
   } else {
@@ -43,11 +49,9 @@ mongoose.connect(mongo_uri, function(err) {
 //   useUnifiedTopology: true,
 // });
 
-
 mongoose.connection.once("open", () => {
   console.log("connected to mongoose...");
 });
-
 
 //ROUTES//
 //weather api//
@@ -61,12 +65,12 @@ mongoose.connection.once("open", () => {
 //   })
 // });
 
-app.get('/api/home', function(req, res) {
-  res.send('Welcome!');
+app.get("/api/home", function (req, res) {
+  res.send("Welcome!");
 });
 
-app.get('/api/secret', function(req, res) {
-  res.send('The password is potato');
+app.get("/api/secret", function (req, res) {
+  res.send("The password is potato");
 });
 
 //LOGIN ROUTE//
@@ -85,9 +89,6 @@ app.get('/api/secret', function(req, res) {
 //   });
 // });
 
-
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);
 });
-
-
