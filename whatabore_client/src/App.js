@@ -1,5 +1,5 @@
 import React, {  useState, useEffect } from "react";
-import Index from './components/Index'
+import Index from './components/website/Index'
 import Dropdown from './components/music-components/Dropdown';
 import Listbox from './components/music-components/Listbox';
 import Detail from './components/music-components/Detail';
@@ -9,16 +9,11 @@ import axios from "axios";
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
 
-  
+const lovedSongs = []
 const spotify = Credentials(); 
 console.log(spotify);
 
 //the data for the drop down genre menu
-const data = [
-  {value: 1, name: 'A'},
-  {value: 2, name: 'B'},
-  {value: 3, name: 'C'},
-]; 
 
 //
 const [token, setToken] = useState('');  
