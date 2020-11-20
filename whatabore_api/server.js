@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = 3001;
 const session = require('express-session')
+const secret = process.env.secret
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser');
+const withAuth = require('./middleware');
 
 const User = require("/Users/nicholaspretel/Documents/GA_Projects/Bored.com/whatabore_api/models/users");
 
@@ -13,6 +17,7 @@ const mongo_uri = process.env.mongoURI
 // middleware
 app.use(express.json());
 app.use('/index/users', require('./controllers/users_controller'));
+app.use(cookieParser());
 //secret middelware
 // app.use(
 //   session({
@@ -66,8 +71,8 @@ app.get('/api/home', function(req, res) {
   res.send('Welcome!');
 });
 
-app.get('/api/secret', function(req, res) {
-  res.send('The password is potato');
+app.get('/api/secret', withAuth, function(req, res) {
+  res.sendStatus(200);
 });
 
 //LOGIN ROUTE//
@@ -86,6 +91,46 @@ app.post('/api/register', function(req, res) {
     }
   });
   // console.log(req.body)
+});
+
+app.post('/api/authenticate', function(req, res) {
+  const { username, password } = req.body;
+  User.findOne({ username }, function(err, user) {
+    if (err) {
+      console.error(err);
+      res.status(500)
+        .json({
+        error: 'Internal error please try again'
+      });
+    } else if (!user) {
+      res.status(401)
+        .json({
+          error: 'Incorrect username or password'
+        });
+    } else {
+      user.isCorrectPassword(password, function(err, same) {
+        if (err) {
+          res.status(500)
+            .json({
+              error: 'Internal error please try again'
+          });
+        } else if (!same) {
+          res.status(401)
+            .json({
+              error: 'Incorrect username or password'
+          });
+        } else {
+          // Issue token
+          const payload = { username };
+          const token = jwt.sign(payload, secret, {
+            expiresIn: '1h'
+          });
+          res.cookie('token', token, { httpOnly: true })
+            .sendStatus(200);
+        }
+      });
+    }
+  });
 });
 
 

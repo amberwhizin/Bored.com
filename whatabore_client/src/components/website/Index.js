@@ -32,12 +32,19 @@ export default class Home extends Component {
           .then(res => res.text())
           .then(res => this.setState({message: res}));
       }
+
+      handleLogin = () => {
+        //GET message from server using fetch api
+        fetch('/api/secret')
+          .then(res => res.text())
+          .then(res => this.setState({message: res}));
+      }
     
     render() {
         return (
             <div>
                 <nav>
-                    <button>Log in</button>
+                    <button onClick={this.handleLogin}>Log in</button>
                     <button onClick={this.handleButtonClick}>Sign up</button>
                     <p>{this.state.message}</p>
                 </nav>
