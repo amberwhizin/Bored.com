@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Index from "./components/Index";
+import Index from "./components/website/Index";
 import Dropdown from "./components/music-components/Dropdown";
 import Listbox from "./components/music-components/Listbox";
 import Detail from "./components/music-components/Detail";
