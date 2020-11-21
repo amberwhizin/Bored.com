@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
 const mongo_uri =
-  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
+  process.env.MONGODB_URI || "mongodb://localhost:27017/" + `snugglehug`;
 const User = require("./models/users.js");
 
 const secret = process.env.secret;
@@ -68,6 +68,8 @@ mongoose.connection.once("open", () => {
 //     }
 //   })
 // });
+
+
 
 app.get("/api/home", function (req, res) {
   res.send("Welcome!");
