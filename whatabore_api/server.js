@@ -72,7 +72,7 @@ app.get("/api/secret", withAuth, function (req, res) {
   res.sendStatus(200);
 });
 
-//LOGIN ROUTE//
+app.get("/api/logout", function (req, res) {});
 
 // POST route to register a user
 app.post("/api/register", function (req, res) {

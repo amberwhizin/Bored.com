@@ -4,6 +4,7 @@ import withAuth from "./components/website/withAuth.js";
 import Index from "./components/website/Index.js";
 import Secret from "./components/website/Secret.js";
 import Login from "./components/website/Login.js";
+import Logout from "./components/website/Logout.js";
 import Dropdown from "./components/music-components/Dropdown";
 import Listbox from "./components/music-components/Listbox";
 import Detail from "./components/music-components/Detail";
@@ -132,12 +133,16 @@ const App = () => {
         <li>
           <Link to="/login">Login</Link>
         </li>
+        <li>
+          <Link to="/logout">Logout</Link>
+        </li>
       </ul>
 
       <Switch>
         <Route exact path="/" component={Index} />
         <Route exact path="/secret" component={withAuth(Secret)} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/logout" component={Logout} />
       </Switch>
       <h1>BORED? Let us help you!</h1>
       <button>MUSIC</button>
