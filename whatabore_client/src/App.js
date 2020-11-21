@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import Spotify from './components/music-components/Spotify'
-import Index from './components/website/Index'
+import Spotify from "./components/music-components/Spotify";
+import Index from "./components/website/Index";
 import withAuth from "./components/website/withAuth.js";
 import Secret from "./components/website/Secret.js";
 import Login from "./components/website/Login.js";
@@ -9,10 +9,8 @@ import Logout from "./components/website/Logout.js";
 
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
-
   return (
     <div className="container">
-       
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -34,12 +32,8 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
       </Switch>
-        <Index />
-        <Spotify />
-    
+      <Spotify />
     </div>
   );
-        
 };
 export default App;
-
