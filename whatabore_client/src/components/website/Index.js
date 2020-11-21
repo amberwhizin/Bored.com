@@ -38,6 +38,10 @@ export default class Index extends Component {
     return (
       <div>
         <p>{this.state.message}</p>
+        <h1>BORED? Let us help you!</h1>
+        <button>MUSIC</button>
+        <button>MOVIES</button>
+        <button>BOOKS</button>
         {/* <h1>Test Weather API: {this.state.weather}</h1>
                 <button onClick={this.handleButtonClick}>WEATHER</button> */}
       </div>
