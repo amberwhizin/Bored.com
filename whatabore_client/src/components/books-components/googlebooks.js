@@ -4,16 +4,17 @@ import "./Credentials" ;
 // import "./Dropdown" ;
 import "./index.html" ; 
 import 'bootstrap/dist/css/bootstrap.css';
+require("dotenv").config();
 
 
+const apiKey = process.env.REACT_APP_googleSecret
 // class googlebooks extends Component {
 
     function App() {
     
     const [book, setBook] = useState("");
     const [result, setResult] = useState([]);
-    const [apiKey, setApiKey] = useState("AIzaSyB_Ahm92sGZbjvT3e0qOVWkZ1imyUphCNw")
-
+    const [apiKey, setApiKey] = useState(apiKey)
     function handleChange (event){
       
         const book = event.target.value;
