@@ -1,20 +1,25 @@
 const express = require("express");
 var request = require("request");
 const mongoose = require("mongoose");
-const app = express();
-const PORT = 3001;
-const session = require("express-session");
-const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const withAuth = require("./middleware");
-
-const User = require("./models/users");
-
+const methodOverride = require("method-override");
 require("dotenv").config();
-const mongo_uri = process.env.mongoURI;
+const app = express();
+const PORT = process.env.PORT || 3001;
+const session = require("express-session");
+const jwt = require("jsonwebtoken");
+const mongo_uri =
+  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
+const User = require("./models/users.js");
+
 const secret = process.env.secret;
 // middleware
+app.use(express.static("public"));
+// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());
+app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
+app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 app.use("/index/users", require("./controllers/users_controller"));
 app.use(cookieParser());
 //secret middelware
@@ -66,6 +71,10 @@ mongoose.connection.once("open", () => {
 
 app.get("/api/home", function (req, res) {
   res.send("Welcome!");
+});
+
+app.get("/api/secret", function (req, res) {
+  res.send("The password is potato");
 });
 
 app.get("/api/secret", withAuth, function (req, res) {
@@ -131,7 +140,6 @@ app.get("/checkToken", withAuth, function (req, res) {
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);
 });
-
 // curl -X POST \
 //   http://localhost:3001/api/register \
 //   -H 'Content-Type: application/json' \
