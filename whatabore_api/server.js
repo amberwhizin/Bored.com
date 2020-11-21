@@ -1,6 +1,7 @@
 const express = require("express");
 var request = require("request");
 const mongoose = require("mongoose");
+const path = require("path"); // build in module from node
 const cookieParser = require("cookie-parser");
 const withAuth = require("./middleware");
 const methodOverride = require("method-override");
@@ -9,8 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
+
 const mongo_uri =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/" + `snugglehug`;
+  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
+
 const User = require("./models/users.js");
 
 const secret = process.env.secret;
@@ -41,7 +44,7 @@ mongoose.connection.on("disconnected", () =>
   console.log("mongo is disconnected")
 );
 
-mongoose.connect(mongo_uri, function (err) {
+mongoose.connect(mongo_uri, { useNewUrlParser: true }, function (err) {
   if (err) {
     throw err;
   } else {
@@ -68,8 +71,6 @@ mongoose.connection.once("open", () => {
 //     }
 //   })
 // });
-
-
 
 app.get("/api/home", function (req, res) {
   res.send("Welcome!");
@@ -138,6 +139,20 @@ app.post("/api/authenticate", function (req, res) {
 app.get("/checkToken", withAuth, function (req, res) {
   res.sendStatus(200);
 });
+
+//whenever our app is in heroku, where going to serve the build folder
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  //all the JS and CSS files will be read and served from this folder
+  app.use(express.static("whatabore_client/build"));
+
+  // any other route that the iuse goes to that is NOT willing to go to one that we previously configured the we want to keep sending them a page they can see
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "whatabore_client", "build", "index.html")
+    );
+  });
+}
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);
