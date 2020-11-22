@@ -1,17 +1,16 @@
-const bcrypt = require('bcrypt');
-const express = require('express');
+const bcrypt = require("bcrypt");
+const express = require("express");
 const router = express.Router();
 const users = express.Router();
 
-const User = require('../models/users.js');
+const User = require("../models/users.js");
 
-router.post('/', (req, res) => {
-    res.send('register');
+router.post("/", (req, res) => {
+  res.send("register");
 });
 
-
-    //   currentUser: req.session.currentUser //give access to the user
-    // })
+//   currentUser: req.session.currentUser //give access to the user
+// })
 //   });
 //   users.post('/', (req, res) => {
 //     //overwrite the user password with the hashed password, then pass that in to our database
@@ -20,4 +19,4 @@ router.post('/', (req, res) => {
 //      console.log('user is created', createdUser)
 //    });
 //  });
- module.exports = users;
+module.exports = users;

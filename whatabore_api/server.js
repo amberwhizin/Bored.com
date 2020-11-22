@@ -92,7 +92,6 @@ mongoose.connection.once("open", () => {
 //   })
 // });
 
-
 //index
 app.get("/api/home", function (req, res) {
   res.send("Welcome!");
