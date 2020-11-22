@@ -10,11 +10,31 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const mongo_uri =
   process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
 
 const User = require("./models/users.js");
+
+// accept requests from your React app in your API server
+// "https://whatabore.herokuapp.com" in this case is the React app url
+const allowedURLs = [
+  "http://localhost:3000",
+  "https://whatabore.herokuapp.com",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedURLs.indexOf(origin) >= 0) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 const secret = process.env.secret;
 // middleware
@@ -72,6 +92,8 @@ mongoose.connection.once("open", () => {
 //   })
 // });
 
+
+//index
 app.get("/api/home", function (req, res) {
   res.send("Welcome!");
 });
@@ -153,10 +175,22 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
+// if i can push as one to heroku
+// let baseURL;
 
-app.listen(PORT, () => {
-  console.log("Listening to port", PORT);
-});
+// if (process.env.NODE_ENV === "development") {
+//   baseURL = "http://localhost:3000";
+// } else {
+//   // "https://whatabore.herokuapp.com" in this case is the *API* url
+//   baseURL = "https://whatabore.herokuapp.com";
+// }
+
+// console.log("current base URL:", baseURL);
+
+// app.listen(PORT, () => {
+//   console.log("Listening to port", PORT);
+// });
+
 // curl -X POST \
 //   http://localhost:3001/api/register \
 //   -H 'Content-Type: application/json' \
