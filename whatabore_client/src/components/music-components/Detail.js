@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Detail = ({album, artists, name}) => {
 
     return (
@@ -16,7 +17,7 @@ const Detail = ({album, artists, name}) => {
                     {name}
                 </label>
             </div>
-            <div className="row col-sm-12 px-0">
+            <div className="row col-sm-12 px-40">
                 <label htmlFor={artists[0].name} className="form-label col-sm-12">
                     {artists[0].name}
                 </label>

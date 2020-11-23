@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel } from "react-bootstrap";
 // import User from "./website/User";
 // import axios from "axios";
 
@@ -37,15 +38,21 @@ export default class Index extends Component {
 
   render() {
     return (
+      
+    
       <div className="sections">
         <p>{this.state.message}</p>
         <h1>BORED? Let us help you!</h1>
+        <div className="button"></div>
         <button>MUSIC</button>
         <button>MOVIES</button>
-        <button>BOOKS</button>
         {/* <h1>Test Weather API: {this.state.weather}</h1>
                 <button onClick={this.handleButtonClick}>WEATHER</button> */}
       </div>
+
+
+
+
     );
   }
 }
