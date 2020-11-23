@@ -8,6 +8,7 @@ import Login from "./components/website/Login.js";
 import Logout from "./components/website/Logout.js";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from "./components/profile-component/Profile.js";
 
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
@@ -90,8 +91,9 @@ const App = () => {
         <Route exact path="/secret" component={withAuth(Secret)} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
+        <Route path="/profile" component={Profile} />
+        <Route exact path="/music" component={Spotify} />
       </Switch>
-      <Spotify />
     </div>
   );
 };

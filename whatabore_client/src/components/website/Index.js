@@ -20,6 +20,7 @@ import { Carousel } from "react-bootstrap";
 //         })
 //     });
 //         };
+import { Link } from "react-router-dom";
 export default class Index extends Component {
   constructor() {
     super();
@@ -43,11 +44,14 @@ export default class Index extends Component {
       <div className="sections">
         <p>{this.state.message}</p>
         <h1>BORED? Let us help you!</h1>
-        <div className="button"></div>
-        <button>MUSIC</button>
+
         <button>MOVIES</button>
-        {/* <h1>Test Weather API: {this.state.weather}</h1>
-                <button onClick={this.handleButtonClick}>WEATHER</button> */}
+        <button>BOOKS</button>
+        <Link to="/music">
+          <button renderAs="button">
+            <span>MUSIC</span>
+          </button>
+        </Link>
       </div>
 
 
@@ -56,3 +60,36 @@ export default class Index extends Component {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
