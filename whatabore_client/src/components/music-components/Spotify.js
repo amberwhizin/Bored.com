@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react";
+import React, {  Component, useState, useEffect } from "react";
 // import { BrowserRouter as Router, Link, NavLink, Redirect } from 'react-router-dom';
 // import Route from 'react-router-dom/Route';
 import Index from '../website/Index';

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from "react-router-dom";
 
 const Detail = ({album, artists, name}) => {
 
@@ -20,9 +21,11 @@ const Detail = ({album, artists, name}) => {
                     {artists[0].name}
                 </label>
             </div>
-            <div className="row col-sm-12 px-0">
-                <button className="addCollect">Add to Collection</button>
-            </div>
+            <Link to="/yourcollection">
+  <button renderAs="button">
+    <span>UNBORE ME!</span>
+  </button>
+</Link>
         </div>
     );
 }

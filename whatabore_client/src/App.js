@@ -6,6 +6,7 @@ import withAuth from "./components/website/withAuth.js";
 import Secret from "./components/website/Secret.js";
 import Login from "./components/website/Login.js";
 import Logout from "./components/website/Logout.js";
+import Movie from "./components/movies-components/Movie";
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
   return (
@@ -29,8 +30,10 @@ const App = () => {
         <Route exact path="/secret" component={withAuth(Secret)} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
+        <Route exact path="/music" component= {Spotify} />
+        <Route exact path="/movies" component= {Movie} />
+        <Route exact path="/yourcollection" />
       </Switch>
-      <Spotify />
     </div>
   );
 };
