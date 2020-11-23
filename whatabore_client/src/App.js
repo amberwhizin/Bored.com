@@ -33,8 +33,8 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
         <Route path="/profile" component={Profile} />
+        <Route exact path="/music" component={Spotify} />
       </Switch>
-      <Spotify />
     </div>
   );
 };
