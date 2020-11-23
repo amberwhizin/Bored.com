@@ -6,6 +6,7 @@ import withAuth from "./components/website/withAuth.js";
 import Secret from "./components/website/Secret.js";
 import Login from "./components/website/Login.js";
 import Logout from "./components/website/Logout.js";
+import Movie from "./components/movies-components/Movie";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from "./components/profile-component/Profile.js";
@@ -52,8 +53,10 @@ const App = () => {
         <Route exact path="/secret" component={withAuth(Secret)} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
+        <Route exact path="/music" component= {Spotify} />
+        <Route exact path="/movies" component= {Movie} />
+        <Route exact path="/yourcollection" />
         <Route path="/profile" component={Profile} />
-        <Route exact path="/music" component={Spotify} />
       </Switch>
     </div>
   );
