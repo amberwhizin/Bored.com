@@ -1,12 +1,14 @@
 import React, {  useState, useEffect } from "react";
 // import { BrowserRouter as Router, Link, NavLink, Redirect } from 'react-router-dom';
 // import Route from 'react-router-dom/Route';
-import Index from '../website/Index';
+// import Index from '../website/Index';
 import Dropdown from './Dropdown';
 import Listbox from './Listbox';
 import Detail from './Detail';
 import { Credentials } from './Credentials';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //modern code for export class app.. destructuring assignment syntax
 const Spotify = () => {
@@ -27,6 +29,7 @@ console.log(spotify);
 //the below is for when the token is first return we will store the token in the state
 const [token, setToken] = useState('');  
 //after we get tokens we will pull a list of genres from our dropdown
+
   const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
   const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
   const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []});
@@ -133,8 +136,8 @@ const [token, setToken] = useState('');
     <div className="container">
       
       <form onSubmit={buttonClicked}>        
-          <Dropdown label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
-          <Dropdown label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} />
+          <Dropdown label="Genre:" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
+          <Dropdown label="Playlist:" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} />
           <div className="col-sm-6 row form-group px-0">
             <button type='submit' className="btn btn-success col-sm-12">
               Search

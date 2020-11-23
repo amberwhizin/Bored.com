@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Session extends Component {
     render() {
@@ -7,6 +8,7 @@ export default class Session extends Component {
                 <h1>
                     Log In
                 </h1>
+                
                 <form method="POST">
                     <label for="name">User Name:</label>
                     <input type="text" name="username" required/>

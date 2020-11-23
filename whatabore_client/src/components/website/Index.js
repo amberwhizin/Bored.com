@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import User from "./website/User";
 // import axios from "axios";
 
@@ -36,7 +37,7 @@ export default class Index extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sections">
         <p>{this.state.message}</p>
         <h1>BORED? Let us help you!</h1>
         <button>MUSIC</button>

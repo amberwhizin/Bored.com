@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Listbox = props => {
 
@@ -8,8 +10,9 @@ const Listbox = props => {
     }    
 
     return (
-        <div className="col-sm-6 px-0">
+        <div className="col-sm-10 px-20">
             <div className="list-group">
+           
                 {
                     props.items.map((item, idx) => 
                     <button key={idx}
