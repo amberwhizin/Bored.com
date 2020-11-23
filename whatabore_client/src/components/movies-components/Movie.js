@@ -20,15 +20,17 @@ function Movie() {
   const baseURL = "http://www.omdbapi.com/?";
 const apikey = "apikey=" + process.env.REACT_APP_movieSecret;
 const apiurl = baseURL + apikey
-console.log(apiurl)
+// console.log(apiurl)
 // console.log(process.env)
-//   const apiurl = "http://www.omdbapi.com/?apikey=6253ae12";
+
 
 
   //api call to search for the movie
-  const search = (enter) => {
+  const search = (event) => {
+      event.preventDefault();
       //if equal to enter
-    if (enter.key === "Enter") {
+      //decided not to use the Enter key so we added a form button in the Search.js
+    // if (enter.key === "Enter") {
         //api call with the  s parameter from the api docs
         //data returns what u pull from the API
         //curly brackets destructure for cleaner code 
@@ -41,7 +43,7 @@ console.log(apiurl)
           return { ...previousState, results: results }
         })
       });
-    }
+    // }
   }
   
   //function that lets serach bar change
