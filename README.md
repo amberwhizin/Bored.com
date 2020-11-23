@@ -1,42 +1,10 @@
-# Bored.com
+# whatabore.com
 
-
-
-Tavia
-Dani
-
-
-test
-=======
-
-=======
+- Heroku Link:
+- https://whatabore.herokuapp.com/
 
 
 
 
-- we are collaborators!
-=======
-
-
-Nick Pretel - private
-=======
-
-Dani
-
-=======
-
-
-
-Tavia
-Dani
-
-
-=========
-
-
-Hey!
-
-=======
-test
 
 
