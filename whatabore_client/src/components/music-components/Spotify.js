@@ -134,13 +134,13 @@ const [token, setToken] = useState('');
     <div className="container">
       <form onSubmit={buttonClicked}>
         <Dropdown
-          label="Genre :"
+          label="Genre:"
           options={genres.listOfGenresFromAPI}
           selectedValue={genres.selectedGenre}
           changed={genreChanged}
         />
         <Dropdown
-          label="Playlist :"
+          label="Playlist:"
           options={playlist.listOfPlaylistFromAPI}
           selectedValue={playlist.selectedPlaylist}
           changed={playlistChanged}
