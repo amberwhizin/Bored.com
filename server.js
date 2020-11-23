@@ -65,13 +65,18 @@ mongoose.connection.on("disconnected", () =>
   console.log("mongo is disconnected")
 );
 
-mongoose.connect(mongo_uri, { useNewUrlParser: true }, function (err) {
-  if (err) {
-    throw err;
-  } else {
-    console.log(`Successfully connected to mongo`);
+mongoose.connect(
+  mongo_uri,
+  { useNewUrlParser: true },
+  { useUnifiedTopology: true },
+  function (err) {
+    if (err) {
+      throw err;
+    } else {
+      console.log(`Successfully connected to mongo`);
+    }
   }
-});
+);
 // mongoose.connect("mongodb://localhost:27017/recs", {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
