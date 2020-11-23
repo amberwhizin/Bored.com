@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Listbox = (props) => {
   const clicked = (e) => {
@@ -23,5 +25,6 @@ const Listbox = (props) => {
     </div>
   );
 };
+
 
 export default Listbox;

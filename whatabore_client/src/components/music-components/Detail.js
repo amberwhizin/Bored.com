@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Detail = ({ album, artists, name }) => {
   return (
@@ -23,4 +25,5 @@ const Detail = ({ album, artists, name }) => {
   );
 };
 
+   
 export default Detail;
