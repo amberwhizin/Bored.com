@@ -34,7 +34,7 @@ export default class Index extends Component {
 
 
         <Link to="/movies">
-  <button renderAs="button">
+  <button className="mainBttns" renderAs="button">
     <span>MOVIES</span>
   </button>
 </Link>
@@ -42,17 +42,16 @@ export default class Index extends Component {
         
 
         <Link to="/music">
-  <button renderAs="button">
+  <button className="mainBttns" renderAs="button">
     <span>MUSIC</span>
   </button>
 </Link>
 
 <Link to="/books">
-  <button renderAs="button">
+  <button className="mainBttns" renderAs="button">
     <span>BOOKS</span>
   </button>
 </Link>
-
 
       </div>
 

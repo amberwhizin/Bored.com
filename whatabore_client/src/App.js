@@ -69,9 +69,6 @@ const App = () => {
           <Link to="/login">Login</Link>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Link to="/premium">Premium</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
           <Link to="/download">Download</Link>
         </ListGroup.Item>
         <ListGroup.Item>

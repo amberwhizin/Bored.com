@@ -29,7 +29,7 @@ const Detail = ({ album, artists, name }) => {
   return (
     <div className="offset-md-1 col-sm-4">
       <div className="row col-sm-12 px-0">
-        <img src={album.images[0].url} alt={name}></img>
+        <img className="artistImage" src={album.images[0].url} alt={name}></img>
       </div>
       <div className="row col-sm-12 px-0">
         <label htmlFor={name} className="form-label col-sm-12">

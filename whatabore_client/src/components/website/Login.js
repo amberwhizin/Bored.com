@@ -44,9 +44,12 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Login Below!</h1>
+      <div className="login">
+      <form 
+      onSubmit={this.onSubmit}>
+        <h1 className="loginHeader">Login Below!</h1>
         <input
+        className="username"
           type="text"
           name="username"
           placeholder="Enter username"
@@ -55,6 +58,7 @@ export default class Login extends Component {
           required
         />
         <input
+        className="password"
           type="password"
           name="password"
           placeholder="Enter password"
@@ -62,10 +66,12 @@ export default class Login extends Component {
           onChange={this.handleInputChange}
           required
         />
-        <input type="submit" value="Submit" />
+        <input className="turnin" type="submit" value="Submit" />
       </form>
+      </div>
     );
   }
 }
+
   
 

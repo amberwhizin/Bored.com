@@ -10,6 +10,7 @@ function Search ({ handleInput, search }) {
 		<section className="searchbox-wrap">
             <form onSubmit={search}>
 			<input 
+			className="movieSearchType"
 				type="text" 
 				placeholder="Search for a movie..." 
 				className="searchbox" 
@@ -18,7 +19,7 @@ function Search ({ handleInput, search }) {
                 //will only run when we press the enter key because we set it to check if it has the enter key
 				// onKeyPress={search}
 			/>
-        <input type="submit" value="Search" />
+        <input className="movieSearch" type="submit" value="Search" />
             </form> 
 		</section>
 	)

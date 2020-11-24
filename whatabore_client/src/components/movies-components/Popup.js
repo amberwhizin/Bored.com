@@ -16,8 +16,8 @@ function Popup({ selected, closePopup }) {
 
 				<button className="close" onClick={closePopup}>Close</button>
                 <Link to="/yourcollection">
-  <button renderAs="button">
-    <span>UNBORE ME!</span>
+  <button className="unbore" renderAs="button">
+    <span >UNBORE ME!</span>
   </button>
 </Link>
 			</div>

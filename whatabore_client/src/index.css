@@ -12,9 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-*{
-  background-color: wheat;
-}
+
 body .container {
   background-color:white;
   position: center;
@@ -50,8 +48,9 @@ body .container {
  
   .container nav-bar {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
   }
+  
 
   .sections {
     text-align: center;
@@ -61,6 +60,7 @@ body .container {
 .list-group {
   text-align: center;
   padding: 40px;
+  max-width: 70px;
 }
 
 img{
@@ -78,4 +78,366 @@ img{
   text-align: center;
   padding-right: 20px;
 }
+.bookHeader{
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+  }
+
+  .wrapper{
+	display: flex;
+	justify-content: center;
+align-items: center;
+	flex-flow: column;
+	width: 100%;
+  }
+
+  .bookSearch {
+	padding: 15px ;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: fantasy;
+	color: black;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+  transition: 0.4s ease-out;
+  }
+
+  .bookSearchbox {
+	display: inline;
+	width: 500px;
+	padding: 15px;
+	border: none;
+	outline: none;
+	background: none;
+	background-color: #EEE;
+	border-radius: 8px;
+	color: #53565A;
+	font-size: 20px;
+	font-weight: 300;
+	transition: 0.4s ease-out;
+}
+.bookSearchbox:focus {
+	box-shadow: 0px 0px 8px 3px #4484C4;
+}
+
+.bookSearchBttn{
+		display: inline;
+		  padding: 15px 30px;
+		  font-size: 18px;
+		  font-weight: 700;
+		  background: #4484C4;
+		  color: #FFF;
+		  border-radius: 8px;
+		  border: none;
+		  outline: none;
+		  appearance: none;
+		  cursor: pointer;
+		transition: 0.4s ease-out;
+		margin: 10px;
+	  
+	 
+}
  
+.bookSearchBttn:hover {
+	background: #223343;
+  }
+
+  .bookSearchDrop{
+	display: inline;
+	padding: 13px 21px;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: 0.4s ease-out;
+  }
+.musicHeaders{
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.musicSearch{
+	display: flex;
+	justify-content: center;
+align-items: center;
+	flex-flow: column;
+	width: 100%;
+}
+.filter{
+	padding: 15px ;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: fantasy;
+	color: black;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+  transition: 0.4s ease-out;
+}
+
+.form-label .col-sm-2 {
+	margin-right: 2px;
+}
+
+.musicBttn {
+	color: #fff;
+    background-color: #28a745;
+	border-color: #28a745;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: bolder;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+	transition: 0.4s ease-out;
+}
+
+
+
+
+.App .movieHeader{
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.searchbox-wrap {
+  display: flex;
+  justify-content: center;
+}
+.movieSearch {
+  display: inline;
+	padding: 15px ;
+	font-size: 18px;
+	font-weight: 700;
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+  transition: 0.4s ease-out;
+  margin-left: 10px;
+}
+
+.movieSearch:hover {
+  background: #223343;
+}
+
+.searchbox {
+	display: inline;
+	width: 500px;
+	padding: 15px;
+	border: none;
+	outline: none;
+	background: none;
+	background-color: #EEE;
+	border-radius: 8px;
+	color: #53565A;
+	font-size: 20px;
+	font-weight: 300;
+	transition: 0.4s ease-out;
+}
+.searchbox:focus {
+	box-shadow: 0px 0px 8px 3px #4484C4;
+}
+
+.results {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px -15px;
+}
+
+.results .result {
+	width: 33.333%;
+	min-width: 250px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.results .result img {
+	display: block;
+	width: 100%;
+}
+
+.results .result h3 {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 600;
+	padding: 10px;
+	background: #445565;
+	flex: 1 1 100%;
+	transition: 0.4s ease-out;
+}
+
+.results .result:hover h3 {
+	background: #FFF;
+	color: #223343;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #445565;
+
+	overflow-y: scroll;
+}
+
+.popup .content {
+	display: block;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 25px;
+
+	color: #FFF;
+}
+
+.popup .content h2 {
+	font-size: 28px;
+	font-weight: 600;
+}
+.popup .content h2 span {
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.popup .content .rating {
+	margin-bottom: 30px;
+}
+
+.popup .content .plot {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px -15px 30px;
+}
+
+.popup .content .plot img {
+	flex: 1 1 50%;
+	max-width: 300px;
+	padding: 0px 15px;
+}
+
+.popup .content .plot p {
+	flex: 1 1 50%;
+	padding: 15px;
+}
+
+.popup .content .close {
+	display: inline;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 700;
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+	transition: 0.4s ease-out;
+}
+
+.popup .content .unbore {
+  display: inline;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 700;
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+	transition: 0.4s ease-out;
+}
+
+.popup .content .unbore:hover {
+	background: #223343;
+}
+
+.popup .content .close:hover {
+	background: #223343;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+.loginHeader{
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.username, .password {
+  display: inline;
+	width: 200px;
+	padding: 15px;
+	border: none;
+	outline: none;
+	background: none;
+	background-color: #EEE;
+	border-radius: 8px;
+	color: #53565A;
+	font-size: 20px;
+	font-weight: 300;
+  transition: 0.4s ease-out;
+  margin: 10px;
+}
+.turnin{
+  display: inline;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 700;
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+	transition: 0.4s ease-out;
+}
+
+.turnin:hover{
+  background: #223343;
+}
+
+.mainBttns{
+  display: inline;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 700;
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+  transition: 0.4s ease-out;
+  margin: 10px;
+}
+
+.mainBttns:hover {
+  background: #223343;
+}
+
+
+

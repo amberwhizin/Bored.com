@@ -83,7 +83,7 @@ const apiurl = baseURL + apikey
   return (
     <div className="App">
       <header>
-        <h1>Movie Database</h1>
+        <h1 className= "movieHeader">Watch Some Movies!</h1>
       </header>
       <main>
           

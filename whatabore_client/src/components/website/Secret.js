@@ -9,7 +9,9 @@ export default class Secret extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/yourcollection");
+    fetch("/api/secret")
+      .then((res) => res.text())
+      .then((res) => this.setState({ message: res }));
   }
 
   render() {

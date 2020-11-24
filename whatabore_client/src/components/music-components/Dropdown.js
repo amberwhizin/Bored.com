@@ -9,7 +9,7 @@ const Dropdown = (props) => {
   };
 
   return (
-    <div className="col-sm-6 form-group row px-0">
+    <div className="filter col-sm-6 form-group row px-0">
       <label className="form-label col-sm-2">{props.label}</label>
       <select
         value={props.selectedValue}

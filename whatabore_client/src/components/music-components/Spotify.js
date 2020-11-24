@@ -132,21 +132,26 @@ const [token, setToken] = useState('');
 
   return (
     <div className="container">
-      <form onSubmit={buttonClicked}>
+      <h1 className="musicHeaders">Listen to some Music</h1>
+
+      <form className="musicSearch"
+      onSubmit={buttonClicked}>
         <Dropdown
-          label="Genre :"
+        className="filter"
+          label="Genre:"
           options={genres.listOfGenresFromAPI}
           selectedValue={genres.selectedGenre}
           changed={genreChanged}
         />
         <Dropdown
-          label="Playlist :"
+        className="filter"
+          label="Playlist:"
           options={playlist.listOfPlaylistFromAPI}
           selectedValue={playlist.selectedPlaylist}
           changed={playlistChanged}
         />
         <div className="col-sm-6 row form-group px-0">
-          <button type="submit" className="btn btn-success col-sm-12">
+          <button type="submit" className="musicBttn btn btn-success col-sm-12">
             Search
           </button>
         </div>
@@ -158,7 +163,8 @@ const [token, setToken] = useState('');
           {trackDetail && <Detail {...trackDetail} />}
         </div>
       </form>
-    </div>
+      </div>
+    
   );
 };
 export default Spotify;

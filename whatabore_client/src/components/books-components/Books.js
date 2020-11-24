@@ -61,7 +61,9 @@ import SearchBox from './SearchBox'
     return (  
    
         <div className="wrapper">
+          <h1 className="bookHeader">Read a book!</h1>
         <SearchBox 
+        className="bookSearch"
             data={this.state} 
             handleSubmit={this.handleSubmit} 
             handleChange={this.handleChange} 
