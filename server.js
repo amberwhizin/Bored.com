@@ -16,7 +16,7 @@ const mongo_uri =
   process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
 
 const User = require("./models/users.js");
-
+// const Collection = require("./models/collection.js");
 // accept requests from your React app in your API server
 // "https://whatabore.herokuapp.com" in this case is the React app url
 // const allowedURLs = [
@@ -122,6 +122,19 @@ app.post("/api/register", function (req, res) {
   });
   // console.log(req.body)
 });
+
+// app.post("/api/collect", function (req, res) {
+//   const { itemTitle, itemImage } = req.body;
+//   const collection = new Collection({ itemTitle, itemImage });
+//   console.log(collection);
+//   collection.save(function (err) {
+//     if (err) {
+//       res.status(500).send("Error saving collection.");
+//     } else {
+//       res.status(200).send("content added!");
+//     }
+//   });
+// });
 
 app.post("/api/authenticate", function (req, res) {
   const { username, password } = req.body;
