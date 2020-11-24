@@ -191,7 +191,7 @@ if (process.env.NODE_ENV === "production") {
 
 //controllers
 const todoListController = require("./controllers/todo_controller.js");
-app.use("/todolists", todoListController);
+app.use("/todo-lists", todoListController);
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);

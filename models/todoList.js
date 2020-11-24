@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const todoListSchema = new Schema({
   name: { type: String, required: true },
-  done: { type: Boolean, default: false },
+  isDone: { type: Boolean, default: false },
 });
 
 const TodoList = mongoose.model("TodoList", todoListSchema);
