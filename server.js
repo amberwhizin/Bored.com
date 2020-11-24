@@ -1,5 +1,4 @@
 const express = require("express");
-var request = require("request");
 const mongoose = require("mongoose");
 const path = require("path"); // build in module from node
 const cookieParser = require("cookie-parser");
@@ -175,17 +174,9 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-// if i can push as one to heroku
-// let baseURL;
-
-// if (process.env.NODE_ENV === "development") {
-//   baseURL = "http://localhost:3000";
-// } else {
-//   // "https://whatabore.herokuapp.com" in this case is the *API* url
-//   baseURL = "https://whatabore.herokuapp.com";
-// }
-
-// console.log("current base URL:", baseURL);
+//profile controller
+const profileController = require("./controllers/profiles_controller.js");
+app.use("/profiles", profileController);
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);
