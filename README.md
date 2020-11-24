@@ -1,6 +1,6 @@
 # What-A-Bore App!
 
-The What-A-Bore App solves all your questions about what you should do today based on your interests in Music, Movies and Books. Just ask Spotify's vast API what you should listen to today, they know what you need! Or find a movie to watch on IMDB's never ending database, read the Bio check out the cover art. What-A-Bore App will give you amazing suggestions for your weekend jams, movie nights with your friends. Most importantly, you wont be bored anymore! --idea by Ronald Myers
+The What-A-Bore App solves all your questions about what you should do today based on your interests in Music, Movies and Books AND a do list to check off what you've watched/read/listened to. Just ask Spotify's vast API what you should listen to today, they know what you need! Or find a movie to watch on IMDB's never ending database, read the Bio check out the cover art. What-A-Bore App will give you amazing suggestions for your weekend jams, movie nights with your friends. Most importantly, you wont be bored anymore! --idea by Ronald Myers
 
 ## Technologies
 
@@ -33,7 +33,7 @@ The What-A-Bore App solves all your questions about what you should do today bas
 
 - Started with MVC file structure
 - Added Full CRUD
-- 3rd Part API's from Spotify and IMDB
+- 3rd Party API's from Spotify and IMDB
 - Bootstrap and CSS3
 - Test
 - Polish
@@ -58,10 +58,10 @@ Add Songs, movies and books to a personalized collection to view and delete them
 
 ## Unsolved
 
-- Sign Up Page to go with Login
+- Sign Up Page/Login
 - Link Profile Page to Sign Up
 - More and more and more CSS
-- Genre dropdown menu for IMDB API 
+- Genre dropdown menu for IMDB API and Books API
 
 ## Notes/Stretch Goals
 
