@@ -188,17 +188,10 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-// if i can push as one to heroku
-// let baseURL;
 
-// if (process.env.NODE_ENV === "development") {
-//   baseURL = "http://localhost:3000";
-// } else {
-//   // "https://whatabore.herokuapp.com" in this case is the *API* url
-//   baseURL = "https://whatabore.herokuapp.com";
-// }
-
-// console.log("current base URL:", baseURL);
+//controllers
+const todoListController = require("./controllers/todo_controller.js");
+app.use("/todolists", todoListController);
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);

@@ -6,6 +6,6 @@ const todoListSchema = new Schema({
   done: { type: Boolean },
 });
 
-const Todo = mongoose.model("Product", todoListSchema);
+const TodoList = mongoose.model("Product", todoListSchema);
 
-module.exports = Todo;
+module.exports = TodoList;
