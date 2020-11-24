@@ -65,7 +65,7 @@ const App = () => {
           <Link to="/login">Login</Link>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Link to="/profile">Profile</Link>
+          <Link to="/profiles">Profile</Link>
         </ListGroup.Item>
         <ListGroup.Item>
           <Link to="/logout">Logout</Link>
@@ -80,7 +80,7 @@ const App = () => {
         <Route exact path="/music" component={Spotify} />
         <Route exact path="/movies" component={Movie} />
         <Route exact path="/yourcollection" />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profiles" component={Profile} />
       </Switch>
     </div>
   );

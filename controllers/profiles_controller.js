@@ -2,26 +2,7 @@ const express = require("express");
 const users = express.Router();
 const Profile = require("../models/profiles.js");
 
-console.log("profile page");
-
-//create
-users.post("/", (req, res) => {
-  Profile.create(
-    {
-      username: req.body.username,
-      bio: req.body.bio,
-      img: req.body.img,
-      userId: req.body.userId,
-    },
-    (error, createdProfiles) => {
-      if (error) {
-        res.status(400).json({ error: error.message });
-      }
-      // sending it back here!
-      res.status(200).json(createdProfiles);
-    }
-  );
-});
+console.log("*******profile page");
 
 //index
 users.get("/", (req, res) => {
@@ -32,6 +13,30 @@ users.get("/", (req, res) => {
     }
     res.status(200).json(foundProfiles);
   });
+  //console.log(req.body);
+});
+
+//create
+users.post("/", (req, res) => {
+  console.log(req.body);
+  Profile.create(
+    {
+      username: req.body.username,
+      bio: req.body.bio,
+      img: req.body.img,
+      // userId: req.body._id,
+    },
+    (error, createdProfiles) => {
+      console.log(req.body);
+      if (error) {
+        res.status(400).json({ error: error.message });
+      }
+      // sending it back here!
+      console.log(createdProfiles);
+      res.status(200).json(createdProfiles);
+    }
+  );
+  console.log(req.body);
 });
 
 users.get("/seed", async (req, res) => {
@@ -41,7 +46,7 @@ users.get("/seed", async (req, res) => {
       bio: " I enjoy long walks",
       img:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSupsRu6CT_BvWl1svSUSEx9n0AWaJGQEx04g&usqp=CAU",
-      userId: req.body._id,
+      userId: "",
     },
   ];
   try {
@@ -52,5 +57,5 @@ users.get("/seed", async (req, res) => {
   }
 });
 
-//console.log("controller/profiles.js is linked");
+console.log("controller/profiles.js is linked");
 module.exports = users;

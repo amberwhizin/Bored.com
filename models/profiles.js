@@ -5,7 +5,7 @@ const profilesSchema = new Schema({
   username: { type: String, required: true },
   bio: String,
   img: String,
-  userId: { type: Schema.ObjectId, ref: "Profile", required: true },
+  // userId: { type: Schema.ObjectId, ref: "Profile", required: true },
 });
 
 const Profile = mongoose.model("Profile", profilesSchema);
