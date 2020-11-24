@@ -1,7 +1,22 @@
 const express = require("express");
 const lists = express.Router();
+const cors = require("cors");
 
 const TodoList = require("../models/todoList.js");
+
+const allowedURLs = ["http://localhost:3000", "https://localhost:3001"];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedURLs.indexOf(origin) >= 0) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+lists.use(cors(corsOptions));
 
 //index
 lists.get("/", (req, res) => {

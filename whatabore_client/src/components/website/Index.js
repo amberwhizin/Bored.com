@@ -47,6 +47,12 @@ export default class Index extends Component {
             <span>BOOKS</span>
           </button>
         </Link>
+
+        <Link to="/todo-lists">
+          <button renderAs="button">
+            <span>Todo List</span>
+          </button>
+        </Link>
       </div>
     );
   }
