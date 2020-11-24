@@ -1,33 +1,22 @@
 import React, { Component } from 'react';
-import { Well, FormControl } from 'react-bootstrap';
 
-class SearchBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: props.value
-    }
-  }
 
-  onChange(e) {
-    this.setState({value: e.target.value});
-    this.props.onChange(this.state.value);
-  }
+const SearchBox = (props) => {
 
-  render() {
     return (
-      <Well>
-        <FormControl
-          type="text"
-          value={this.state.value}
-          placeholder="Search Books..."
-          onChange={this.onChange.bind(this)}
-        />
-      </Well>
+        <div className="search-area">
+        <form onSubmit={props.handleSubmit}>
+            <input onChange={props.handleChange} placeholder="Search books" type="text"/>
+            <button type="submit">Search</button>
+            <select value={props.sort} onChange={props.handleSort} >
+                <option value="" disabled selected>Sort</option>
+                <option value="Newest">Newest</option>
+                <option value="Oldest">Oldest</option>
+            </select>
+        </form>
+        </div>
+      
     );
-  }
 }
 
 export default SearchBox;
-
- 

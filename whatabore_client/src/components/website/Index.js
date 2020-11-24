@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import BookBrain from "../books-components/BookBrain";
+
 
 
 export default class Index extends Component {

@@ -10,7 +10,7 @@ import Movie from "./components/movies-components/Movie";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from "./components/profile-component/Profile.js";
-import BookBrain from "./components/books-components/BookBrain";
+import Books from "./components/books-components/Books";
 
 //modern code for export class app.. destructuring assignment syntax
 const App = () => {
@@ -95,7 +95,7 @@ const App = () => {
         <Route exact path="/logout" component={Logout} />
         <Route exact path="/music" component= {Spotify} />
         <Route exact path="/movies" component= {Movie} />
-        <Route exact path="/books" component= {BookBrain} />
+        <Route exact path="/books" component= {Books} />
         <Route exact path="/yourcollection" />
         <Route path="/profile" component={Profile} />
       </Switch>
