@@ -22,6 +22,25 @@ export default class TodoList extends Component {
     });
   };
 
+  toggleIsDone = (index) => {
+    console.log("***", { index });
+    const items = this.state.items.map((todoItem, i) => {
+      // index of the currentitem being passed in matches the item were mapping over
+      if (i === index) {
+        return {
+          // spread made copy of item, wooo
+          ...todoItem,
+          isDone: !todoItem.isDone,
+        };
+      }
+      return todoItem;
+    });
+    this.setState({
+      // short for items: items
+      items,
+    });
+  };
+
   handleSubmitOnItem = (e) => {
     e.preventDefault();
     if (!this.state.name) return;
@@ -76,6 +95,9 @@ export default class TodoList extends Component {
           return (
             <div key={item + i}>
               <h3>{item.name}</h3>
+              <button onClick={() => this.toggleIsDone(i)}>
+                {item.isDone ? "done" : "notDone"}
+              </button>
             </div>
           );
         })}
