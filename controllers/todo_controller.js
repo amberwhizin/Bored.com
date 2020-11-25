@@ -40,4 +40,30 @@ lists.post("/", (req, res) => {
   });
 });
 
+//update
+lists.put("/:id", (req, res) => {
+  //find id and update body}
+  TodoList.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (error) => {
+      if (error) {
+        res.status(400).json({ error: error.message });
+      }
+      res.status(200).json();
+    }
+  );
+});
+
+// delete
+lists.delete('/:id', (req, res) => {
+  TodoList.findByIdAndRemove(req.params.id, (error, deletedList) => {
+    if (error) {
+      res.status(400).json( {error: error.message})
+    }
+    res.status(200).json(deletedList);
+  });
+});
+
 module.exports = lists;

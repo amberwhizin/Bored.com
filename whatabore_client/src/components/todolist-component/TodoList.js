@@ -22,8 +22,32 @@ export default class TodoList extends Component {
     });
   };
 
+  handleDelete = (index) => {
+    const items = this.state.items.filter((todoItem, i) => {
+      return i !== index;
+    });
+    const currentItem = this.state.items[index];
+    fetch(baseUrl + "/todo-lists/" + currentItem._id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          this.setState({
+            items,
+          });
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
+
   toggleIsDone = (index) => {
-    console.log("***", { index });
+    // console.log("***", { index });
+    // map array
     const items = this.state.items.map((todoItem, i) => {
       // index of the currentitem being passed in matches the item were mapping over
       if (i === index) {
@@ -35,10 +59,30 @@ export default class TodoList extends Component {
       }
       return todoItem;
     });
-    this.setState({
-      // short for items: items
-      items,
-    });
+    //items im mapping over and the index im passing in of the current item im on and inside that is the id im on
+    const currentItem = items[index];
+    //id is being passes in with "params" from back end
+    // console.log(this.state, { index, items, currentItem });
+    fetch(baseUrl + "/todo-lists/" + currentItem._id, {
+      method: "PUT",
+      body: JSON.stringify({
+        name: currentItem.name,
+        isDone: currentItem.isDone,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          this.setState({
+            items,
+          });
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   };
 
   handleSubmitOnItem = (e) => {
@@ -75,8 +119,8 @@ export default class TodoList extends Component {
   };
 
   render() {
-    const { items } = this.state;
-    console.log({ items });
+    //const { items } = this.state;
+    // console.log({ items });
     return (
       <div>
         <h3>The Bored-Less Task-Tracker</h3>
@@ -91,13 +135,15 @@ export default class TodoList extends Component {
           <input type="submit" value="Add Item" />
         </form>
         {this.state.items.map((item, i) => {
-          console.log(item);
+          // console.log(item);
           return (
             <div key={item + i}>
               <h3>{item.name}</h3>
               <button onClick={() => this.toggleIsDone(i)}>
+            
                 {item.isDone ? "done" : "notDone"}
               </button>
+              <button onClick={() => this.handleDelete(i)}>Delete</button>
             </div>
           );
         })}
