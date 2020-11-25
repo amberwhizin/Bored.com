@@ -7,7 +7,6 @@ export default class TodoList extends Component {
     super(props);
     this.state = {
       items: [],
-      currentItem: "",
       name: "",
       isDone: false,
     };
@@ -17,22 +16,15 @@ export default class TodoList extends Component {
     this.getItem();
   };
 
-  handleChangeCurrentItem = (e) => {
-    this.setState({
-      currentItem: e.target.value,
-    });
-  };
-
   handleChangeName = (e) => {
     this.setState({
-      [e.target.id]: e.target.value,
+      name: e.target.value,
     });
   };
 
   handleSubmitOnItem = (e) => {
     e.preventDefault();
-    if (!this.state.currentItem) return;
-    console.log('ho')
+    if (!this.state.name) return;
     fetch(baseUrl + "/todo-lists/", {
       method: "POST",
       body: JSON.stringify({
@@ -46,7 +38,6 @@ export default class TodoList extends Component {
       .then((data) => {
         this.setState({
           items: this.state.items.concat(data),
-          currentItem: "",
           name: "",
         });
       });
@@ -80,10 +71,10 @@ export default class TodoList extends Component {
           />
           <input type="submit" value="Add Item" />
         </form>
-        {this.state.items.map((item) => {
+        {this.state.items.map((item, i) => {
           console.log(item);
           return (
-            <div>
+            <div key={item + i}>
               <h3>{item.name}</h3>
             </div>
           );
