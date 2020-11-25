@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const baseUrl = "http://localhost:3001";
 
@@ -124,29 +125,44 @@ export default class TodoList extends Component {
     return (
       <div>
         <h3>The Bored-Less Task-Tracker</h3>
-        <form onSubmit={this.handleSubmitOnItem}>
-          <label htmlFor="add-list-item"></label>
-          <input
-            type="text"
-            id="add-list-item"
-            onChange={this.handleChangeName}
-            value={this.state.name}
-          />
-          <input type="submit" value="Add Item" />
-        </form>
-        {this.state.items.map((item, i) => {
-          // console.log(item);
-          return (
-            <div key={item + i}>
-              <h3>{item.name}</h3>
-              <button onClick={() => this.toggleIsDone(i)}>
-            
-                {item.isDone ? "done" : "notDone"}
-              </button>
-              <button onClick={() => this.handleDelete(i)}>Delete</button>
-            </div>
-          );
-        })}
+        <div className="form-group">
+          <form onSubmit={this.handleSubmitOnItem}>
+            <label htmlFor="add-list-item"></label>
+            <input
+              type="text"
+              id="add-list-item"
+              onChange={this.handleChangeName}
+              value={this.state.name}
+            />
+            <input type="submit" value="Add Item" className="btn btn-primary" />
+          </form>
+          {this.state.items.map((item, i) => {
+            // console.log(item);
+            return (
+              <div className="container" key={item + i}>
+                <div onClick={() => this.toggleIsDone(i)}>
+                  {!item.isDone ? (
+                    <h3>{item.name}</h3>
+                  ) : (
+                    (
+                      <del>
+                        <h3>{item.name}</h3>
+                      </del>
+                    ) || <input type="checkbox" />
+                  )}
+                </div>
+                {item.isDone && (
+                  <button
+                    onClick={() => this.handleDelete(i)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
