@@ -3,13 +3,16 @@ const mongoose = require("mongoose");
 const path = require("path"); // build in module from node
 const cookieParser = require("cookie-parser");
 const withAuth = require("./middleware");
-//const methodOverride = require("method-override");
 require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
-//const cors = require("cors");
+
+const mongo_uri =
+  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
+
+const User = require("./models/users.js");
 
 const secret = process.env.secret;
 // middleware
@@ -17,7 +20,6 @@ app.use(express.static("public"));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
-//app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 app.use(cookieParser());
 //secret middelware
@@ -30,11 +32,6 @@ app.use(cookieParser());
 //   })
 // )
 
-
-const mongo_uri =
-  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
-
-const User = require("./models/users.js");
 
 //mongoose connection
 mongoose.connection.on("error", (err) =>
@@ -94,6 +91,19 @@ app.post("/api/register", function (req, res) {
     }
   });
 });
+
+// app.post("/api/collect", function (req, res) {
+//   const { itemTitle, itemImage } = req.body;
+//   const collection = new Collection({ itemTitle, itemImage });
+//   console.log(collection);
+//   collection.save(function (err) {
+//     if (err) {
+//       res.status(500).send("Error saving collection.");
+//     } else {
+//       res.status(200).send("content added!");
+//     }
+//   });
+// });
 
 app.post("/api/authenticate", function (req, res) {
   const { username, password } = req.body;

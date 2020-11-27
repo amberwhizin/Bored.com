@@ -1,6 +1,7 @@
-import React, { Component } from "react";       
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+
 export default class Index extends Component {
   constructor() {
     super();
@@ -21,11 +22,7 @@ export default class Index extends Component {
     return (
       <div className="sections">
         <p>{this.state.message}</p>
-        <img
-          src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
-          class="img-fluid"
-          alt="Responsive image"
-        ></img>
+ 
         <h1>BORED? Let us help you!</h1>
 
         <Link to="/movies">
@@ -40,7 +37,11 @@ export default class Index extends Component {
           </button>
         </Link>
 
-        <button>BOOKS</button>
+        <Link to="/books">
+          <button renderAs="button">
+            <span>BOOKS</span>
+          </button>
+        </Link>
       </div>
     );
   }
