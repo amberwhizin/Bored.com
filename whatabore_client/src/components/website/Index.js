@@ -50,7 +50,7 @@ export default class Index extends Component {
 
         <Link to="/todo-lists">
           <button renderAs="button">
-            <span>Todo List</span>
+            <span>TODO LIST</span>
           </button>
         </Link>
       </div>
