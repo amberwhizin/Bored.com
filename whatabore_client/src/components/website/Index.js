@@ -24,11 +24,6 @@ export default class Index extends Component {
     return (
       <div className="sections">
         <p>{this.state.message}</p>
-        <img
-          src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
-          class="img-fluid"
-          alt="Responsive image"
-        ></img>
         <h1>BORED? Let us help you!</h1>
 
         <Link to="/movies">

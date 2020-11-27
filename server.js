@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const path = require("path"); // build in module from node
 const cookieParser = require("cookie-parser");
 const withAuth = require("./middleware");
-
 require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -33,12 +32,6 @@ app.use(cookieParser());
 //     saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
 //   })
 // )
-
-
-const mongo_uri =
-  process.env.mongoURI || "mongodb://localhost:27017/" + `snugglehug`;
-
-const User = require("./models/users.js");
 
 //mongoose connection
 mongoose.connection.on("error", (err) =>
