@@ -157,10 +157,16 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-//profile controller
+
+//controllers
+const todoListController = require("./controllers/todo_controller.js");
+app.use("/todo-lists", todoListController);
+
 const profileController = require("./controllers/profiles_controller.js");
 app.use("/profiles", profileController);
+
 app.use("/index/users", require("./controllers/users_controller"));
+
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);

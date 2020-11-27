@@ -1,8 +1,6 @@
-import React, { Component } from "react";       
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-
-
 
 export default class Index extends Component {
   constructor() {
@@ -23,6 +21,12 @@ export default class Index extends Component {
   render() {
     return (
       <div className="sections">
+        <img
+          src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
+          class="img-fluid"
+          alt="Responsive image"
+        ></img>
+
         <p>{this.state.message}</p>
         <h1>BORED? Let us help you!</h1>
 
@@ -38,11 +42,17 @@ export default class Index extends Component {
           </button>
         </Link>
 
-       <Link to="/books">
-         <button renderAs="button">
-           <span>BOOKS</span>
-         </button>
-       </Link>
+        <Link to="/books">
+          <button renderAs="button">
+            <span>BOOKS</span>
+          </button>
+        </Link>
+
+        <Link to="/todo-lists">
+          <button renderAs="button">
+            <span>TODO LIST</span>
+          </button>
+        </Link>
       </div>
     );
   }

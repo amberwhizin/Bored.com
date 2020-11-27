@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // input [type-text], input[type=password]
 
 export default class Login extends Component {
- 
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +11,7 @@ export default class Login extends Component {
       password: "",
     };
   }
- 
+
   handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
@@ -67,5 +66,3 @@ export default class Login extends Component {
     );
   }
 }
-  
-
