@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";       
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +10,6 @@ export default class Index extends Component {
     //Set default message
     this.state = {
       message: "Loading...",
-      
     };
   }
 
@@ -21,77 +20,35 @@ export default class Index extends Component {
       .then((res) => this.setState({ message: res }));
   };
 
- 
-
-
   render() {
     return (
-      
-    
       <div className="sections">
         <p>{this.state.message}</p>
+        <img
+          src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
+          class="img-fluid"
+          alt="Responsive image"
+        ></img>
         <h1>BORED? Let us help you!</h1>
 
-
         <Link to="/movies">
-  <button renderAs="button">
-    <span>MOVIES</span>
-  </button>
-</Link>
-        
-        
+          <button renderAs="button">
+            <span>MOVIES</span>
+          </button>
+        </Link>
 
         <Link to="/music">
-  <button renderAs="button">
-    <span>MUSIC</span>
-  </button>
-</Link>
+          <button renderAs="button">
+            <span>MUSIC</span>
+          </button>
+        </Link>
 
-<Link to="/books">
-  <button renderAs="button">
-    <span>BOOKS</span>
-  </button>
-</Link>
-
-
+       <Link to="/books">
+         <button renderAs="button">
+           <span>BOOKS</span>
+         </button>
+       </Link>
       </div>
-
-
-
-
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
