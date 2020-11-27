@@ -1,4 +1,7 @@
-import React from "react";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const Dropdown = (props) => {
   const dropdownChanged = (e) => {
@@ -24,4 +27,7 @@ const Dropdown = (props) => {
   );
 };
 
+    
+
 export default Dropdown;
+

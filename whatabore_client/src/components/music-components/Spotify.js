@@ -1,41 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, {  Component, useState, useEffect } from "react";
 // import { BrowserRouter as Router, Link, NavLink, Redirect } from 'react-router-dom';
 // import Route from 'react-router-dom/Route';
-import Index from "../website/Index";
-import Dropdown from "./Dropdown";
-import Listbox from "./Listbox";
-import Detail from "./Detail";
-import { Credentials } from "./Credentials";
+// import Index from '../website/Index';
+import Dropdown from './Dropdown';
+import Listbox from './Listbox';
+import Detail from './Detail';
+import { Credentials } from './Credentials';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //modern code for export class app.. destructuring assignment syntax
 const Spotify = () => {
-  //secret id and key variable
-  const spotify = Credentials();
-  console.log(spotify);
 
-  //call the api to retrieve the token on page load
-  // once that token is receieved then we will immediately make another call to receieve a list of categories
-  //we will use those categories to populate our genre dropdown list
-  //after a genre is selected we will call the api again to get a list of playlist for that genre
-  //after playlist is selected and button is clicked we will call the api to retieve a list of tracks for that playlist
-  // the list will display the album cover etc
 
-  //the below is for when the token is first return we will store the token in the state
-  const [token, setToken] = useState("");
-  //after we get tokens we will pull a list of genres from our dropdown
-  const [genres, setGenres] = useState({
-    selectedGenre: "",
-    listOfGenresFromAPI: [],
-  });
-  const [playlist, setPlaylist] = useState({
-    selectedPlaylist: "",
-    listOfPlaylistFromAPI: [],
-  });
-  const [tracks, setTracks] = useState({
-    selectedTrack: "",
-    listOfTracksFromAPI: [],
-  });
+//secret id and key variable 
+const spotify = Credentials(); 
+console.log(spotify);
+
+//call the api to retrieve the token on page load 
+// once that token is receieved then we will immediately make another call to receieve a list of categories 
+//we will use those categories to populate our genre dropdown list 
+//after a genre is selected we will call the api again to get a list of playlist for that genre
+//after playlist is selected and button is clicked we will call the api to retieve a list of tracks for that playlist 
+// the list will display the album cover etc
+
+
+//the below is for when the token is first return we will store the token in the state
+const [token, setToken] = useState('');  
+//after we get tokens we will pull a list of genres from our dropdown
+
+  const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []});
+  const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []});
+  const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []});
   const [trackDetail, setTrackDetail] = useState(null);
 
   //the use state function triggers rerender so the token keeps being called infinitely
