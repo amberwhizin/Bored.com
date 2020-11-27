@@ -39,8 +39,6 @@ export default class App extends Component {
           <Route path="/secret" component={Secret} />
         </Switch>
       </div>
-
-      
     );
   }
 }
