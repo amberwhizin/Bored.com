@@ -50,7 +50,6 @@ const App = () => {
         <Route exact path="/logout" component={Logout} />
         <Route exact path="/music" component={Spotify} />
         <Route exact path="/movies" component={Movie} />
-        <Route exact path="/movies" component={Movie} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/yourcollection" />
         <Route path="/profiles" component={Profile} />

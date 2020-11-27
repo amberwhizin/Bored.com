@@ -14,13 +14,14 @@ const mongo_uri =
 
 const User = require("./models/users.js");
 
+// const Collection = require("./models/collection.js");
+
 const secret = process.env.secret;
 // middleware
 app.use(express.static("public"));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
-
 app.use(cookieParser());
 //secret middelware
 // app.use(

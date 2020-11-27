@@ -37,11 +37,11 @@ export default class Index extends Component {
           </button>
         </Link>
 
-        <Link to="/books">
-          <button renderAs="button">
-            <span>BOOKS</span>
-          </button>
-        </Link>
+       <Link to="/books">
+         <button renderAs="button">
+           <span>BOOKS</span>
+         </button>
+       </Link>
       </div>
     );
   }
