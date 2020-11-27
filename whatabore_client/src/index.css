@@ -12,9 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-*{
-  background-color: wheat;
-}
+
 body .container {
   background-color:white;
   position: center;
