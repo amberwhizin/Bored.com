@@ -1,6 +1,9 @@
 import React, { Component } from "react";       
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+
+
+
 export default class Index extends Component {
   constructor() {
     super();
@@ -40,7 +43,11 @@ export default class Index extends Component {
           </button>
         </Link>
 
-        <button>BOOKS</button>
+       <Link to="/books">
+         <button renderAs="button">
+           <span>BOOKS</span>
+         </button>
+       </Link>
       </div>
     );
   }
