@@ -34,7 +34,7 @@ const App = () => {
           <Link to="/profiles">Profile</Link>
         </ListGroup.Item> */}
         <ListGroup.Item>
-          <Link to="/login">Logout</Link>
+          <Link to="/logout">Logout</Link>
         </ListGroup.Item>
       </ListGroup>
 
@@ -54,6 +54,35 @@ const App = () => {
   );
 };
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////Carousel graveyard///////
 ////////////////////////////////
