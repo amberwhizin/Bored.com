@@ -69,19 +69,7 @@ const App = () => {
           <Link to="/login">Login</Link>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Link to="/premium">Premium</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Link to="/download">Download</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Link to="/account">Account</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Link to="/profile">Profile</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Link to="/support">Support</Link>
+          <Link to="/profiles">Profile</Link>
         </ListGroup.Item>
         <ListGroup.Item>
           <Link to="/logout">Logout</Link>
@@ -103,7 +91,7 @@ const App = () => {
         <Route exact path="/movies" component= {Movie} />
         <Route exact path="/books" component= {Books} />
         <Route exact path="/yourcollection" />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profiles" component={Profile} />
       </Switch>
     </div>
   );
