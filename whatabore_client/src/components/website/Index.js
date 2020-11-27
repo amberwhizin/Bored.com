@@ -1,5 +1,4 @@
-import React, { Component } from "react";       
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 export default class Index extends Component {
   constructor() {
@@ -19,29 +18,45 @@ export default class Index extends Component {
 
   render() {
     return (
-      <div className="sections">
+      <div>
         <p>{this.state.message}</p>
-        <img
-          src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
-          class="img-fluid"
-          alt="Responsive image"
-        ></img>
         <h1>BORED? Let us help you!</h1>
 
-        <Link to="/movies">
-          <button renderAs="button">
-            <span>MOVIES</span>
-          </button>
-        </Link>
-
+        <button>MOVIES</button>
+        <button>BOOKS</button>
         <Link to="/music">
           <button renderAs="button">
             <span>MUSIC</span>
           </button>
         </Link>
-
-        <button>BOOKS</button>
       </div>
     );
   }
 }
+
+
+
+
+
+
+
+//////////weather//////////
+// import User from "./website/User";
+// import axios from "axios";
+
+// export default class Index extends Component {
+// constructor(){
+//     super();
+//     this.state = {
+//         weather: "Not yettttt",
+//         session: 'not set'
+//     }
+// }
+// handleButtonClick = () => {
+//     axios.get("/index").then(response => {
+//         // console.log(response.data.temperature);
+//         this.setState({
+//           weather: response.data.temperature
+//         })
+//     });
+//         };
