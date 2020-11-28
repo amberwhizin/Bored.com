@@ -27,30 +27,30 @@ export default class Index extends Component {
           alt="Responsive image"
         ></img>
 
-        <p>{this.state.message}</p>
+        {/* <p>{this.state.message}</p> */}
         <h1>BORED? Let us help you!</h1>
 
         <Link to="/movies">
-          <button renderAs="button">
+          <button className="btn btn-success" renderAs="button">
             <span>MOVIES</span>
           </button>
         </Link>
 
         <Link to="/music">
-          <button renderAs="button">
+          <button className="btn btn-success" renderAs="button">
             <span>MUSIC</span>
           </button>
         </Link>
 
         <Link to="/books">
-          <button renderAs="button">
+          <button className="btn btn-success" renderAs="button">
             <span>BOOKS</span>
           </button>
         </Link>
 
         <Link to="/todo-lists">
-          <button renderAs="button">
-            <span>TODO LIST</span>
+          <button className="btn btn-success" renderAs="button">
+            <span>FUN TRACKER</span>
           </button>
         </Link>
       </div>

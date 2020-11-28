@@ -123,7 +123,7 @@ export default class TodoList extends Component {
     //const { items } = this.state;
     // console.log({ items });
     return (
-      <div>
+      <div className="container">
         <h3 className="todo-title">The Bored-Less Task-Tracker</h3>
         <div className="form-group">
           <form onSubmit={this.handleSubmitOnItem}>
@@ -153,7 +153,7 @@ export default class TodoList extends Component {
                       <del className="todo-undo">
                         <h3>{item.name}</h3>
                       </del>
-                    ) || <input type="checkbox" />
+                    ) 
                   )}
                 </div>
                 {item.isDone && (
@@ -172,3 +172,7 @@ export default class TodoList extends Component {
     );
   }
 }
+
+
+
+                    
