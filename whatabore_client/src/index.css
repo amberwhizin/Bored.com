@@ -1,17 +1,17 @@
 html body {
   background-color: black;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 body .container {
   background-color: white;
@@ -20,6 +20,7 @@ body .container {
 
 h2 {
   text-align: left;
+  font-family: fantasy;
 }
 
 h1 {
@@ -31,6 +32,7 @@ h1 {
 
 .artistImage {
   text-align: center;
+  font-family: fantasy;
   width: 300px;
   height: 300px;
   box-sizing: content-box;
@@ -59,6 +61,7 @@ h1 {
 img {
   text-align: center;
   padding-left: 100px;
+  margin-bottom: 50px;
 }
 
 .addCollect {
@@ -72,24 +75,49 @@ img {
   padding-right: 20px;
 }
 
+.btn-success {
+  margin: 10px;
+  margin-top: 70px;
+}
+
+/* todo list css */
 .todo-title {
   text-align: center;
+  font-family: fantasy;
 }
 
 form > #add-list-item {
   margin: 10px;
+  margin-left: 430px;
+  margin-top: 40px;
+}
+
+div > .btn-danger {
+  margin-left: 490px;
 }
 
 div > div > .todo-text:hover {
+  text-align: center;
+  font-family: fantasy;
   color: grey;
   cursor: pointer;
 }
 
+div > div > .todo-text {
+  text-align: center;
+  font-family: fantasy;
+  margin: 20px 0;
+  padding: 30px 0;
+}
+
 div > div > .todo-undo:hover {
+  text-align: center;
+  font-family: fantasy;
   cursor: pointer;
   color: red;
 }
-
-div > div > .todo-text {
- margin: 30px 0
+div > div > .todo-undo {
+  text-align: center;
+  font-family: fantasy;
+  cursor: pointer;
 }
