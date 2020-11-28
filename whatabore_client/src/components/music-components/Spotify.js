@@ -137,6 +137,7 @@ const Spotify = () => {
 
   return (
     <div className="container">
+      <h3 className="music-title">Music Generator</h3>
       <form onSubmit={buttonClicked}>
         <Dropdown
           label="Genre :"

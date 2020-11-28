@@ -20,7 +20,7 @@ body .container {
 
 h2 {
   text-align: left;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
 
 .artistImage {
   text-align: center;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
   width: 300px;
   height: 300px;
   box-sizing: content-box;
@@ -41,6 +41,16 @@ h1 {
   border-width: 10px;
   border-image: linear-gradient(to left bottom, #260B3C, #a053df);
   border-image-slice: 1; */
+}
+/* todo image */
+.img-fluid-todo {
+  width: 600px;
+  height: auto;
+  max-height: 300px;
+  margin-bottom: 40px;
+  margin-left: 250px;
+  padding: 0;
+  border-radius: 15px 50px 30px 50px;
 }
 
 .container nav-bar {
@@ -75,49 +85,69 @@ img {
   padding-right: 20px;
 }
 
+/* home page buttons */
 .btn-success {
   margin: 10px;
   margin-top: 70px;
 }
 
-/* todo list css */
-.todo-title {
-  text-align: center;
-  font-family: fantasy;
+.music-title {
+  font-family: fantasy, sans-serif;
+  margin-bottom: 70px;
+  margin-left: 80px;
 }
 
+/* todo list css */
+/* todo list title */
+.todo-title {
+  text-align: center;
+  font-family: fantasy, sans-serif;
+  margin-bottom: 20px;
+}
+
+/* items for list */
 form > #add-list-item {
   margin: 10px;
   margin-left: 430px;
   margin-top: 40px;
 }
 
+/* delete button */
 div > .btn-danger {
   margin-left: 490px;
+  margin-bottom: 20px;
 }
 
+/* text for items in list /hover */
 div > div > .todo-text:hover {
   text-align: center;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
   color: grey;
   cursor: pointer;
 }
 
+/* text for items in list*/
 div > div > .todo-text {
   text-align: center;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
   margin: 20px 0;
   padding: 30px 0;
+  margin-bottom: 20px;
 }
 
+/* text crossed out, avail to delete / hover */
 div > div > .todo-undo:hover {
   text-align: center;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
   cursor: pointer;
   color: red;
 }
+
+/* text crossed out, avail to delete */
 div > div > .todo-undo {
   text-align: center;
-  font-family: fantasy;
+  font-family: fantasy, sans-serif;
   cursor: pointer;
+  margin-bottom: 20px;
+  padding: 10px;
 }

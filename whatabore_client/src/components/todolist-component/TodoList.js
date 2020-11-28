@@ -124,6 +124,12 @@ export default class TodoList extends Component {
     // console.log({ items });
     return (
       <div className="container">
+        {/* image for todo list */}
+        <img
+          src="https://www.theladders.com/wp-content/uploads/to-do-list-190702.jpg"
+          class="img-fluid-todo"
+          alt="picture of todo list, coffee, plant"
+        />
         <h3 className="todo-title">The Bored-Less Task-Tracker</h3>
         <div className="form-group">
           <form onSubmit={this.handleSubmitOnItem}>
@@ -149,11 +155,9 @@ export default class TodoList extends Component {
                   {!item.isDone ? (
                     <h3 className="todo-text">{item.name}</h3>
                   ) : (
-                    (
-                      <del className="todo-undo">
-                        <h3>{item.name}</h3>
-                      </del>
-                    ) 
+                    <del className="todo-undo">
+                      <h3>{item.name}</h3>
+                    </del>
                   )}
                 </div>
                 {item.isDone && (
@@ -172,7 +176,3 @@ export default class TodoList extends Component {
     );
   }
 }
-
-
-
-                    
