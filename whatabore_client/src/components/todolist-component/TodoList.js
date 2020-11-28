@@ -124,7 +124,7 @@ export default class TodoList extends Component {
     // console.log({ items });
     return (
       <div>
-        <h3>The Bored-Less Task-Tracker</h3>
+        <h3 className="todo-title">The Bored-Less Task-Tracker</h3>
         <div className="form-group">
           <form onSubmit={this.handleSubmitOnItem}>
             <label htmlFor="add-list-item"></label>
@@ -134,7 +134,12 @@ export default class TodoList extends Component {
               onChange={this.handleChangeName}
               value={this.state.name}
             />
-            <input type="submit" value="Add Item" className="btn btn-primary" />
+            <input
+              className="todo"
+              type="submit"
+              value="Add Item"
+              className="btn btn-primary"
+            />
           </form>
           {this.state.items.map((item, i) => {
             // console.log(item);
@@ -142,10 +147,10 @@ export default class TodoList extends Component {
               <div className="container" key={item + i}>
                 <div onClick={() => this.toggleIsDone(i)}>
                   {!item.isDone ? (
-                    <h3>{item.name}</h3>
+                    <h3 className="todo-text">{item.name}</h3>
                   ) : (
                     (
-                      <del>
+                      <del className="todo-undo">
                         <h3>{item.name}</h3>
                       </del>
                     ) || <input type="checkbox" />
