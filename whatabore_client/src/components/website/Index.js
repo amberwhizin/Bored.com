@@ -24,7 +24,7 @@ export default class Index extends Component {
         <img
           src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
           class="img-fluid"
-          alt="Responsive image"
+          alt="picture of a sleepy man"
         ></img>
 
         {/* <p>{this.state.message}</p> */}
