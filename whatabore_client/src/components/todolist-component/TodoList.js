@@ -151,6 +151,7 @@ export default class TodoList extends Component {
             // console.log(item);
             return (
               <div className="container" key={item + i}>
+                <button onClick={this.getItem}>Get items</button>
                 <div onClick={() => this.toggleIsDone(i)}>
                   {!item.isDone ? (
                     <h3 className="todo-text">{item.name}</h3>
