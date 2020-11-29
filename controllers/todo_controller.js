@@ -7,7 +7,7 @@ const TodoList = require("../models/todoList.js");
 const allowedURLs = [
   "http://localhost:3000",
   "https://localhost:3001",
-  "https://whatabore.herokuapp.com/",
+  "https://whatabore.herokuapp.com",
 ];
 
 const corsOptions = {
