@@ -57,3 +57,30 @@ export default class Index extends Component {
     );
   }
 }
+
+
+
+
+
+
+
+//////////weather//////////
+// import User from "./website/User";
+// import axios from "axios";
+
+// export default class Index extends Component {
+// constructor(){
+//     super();
+//     this.state = {
+//         weather: "Not yettttt",
+//         session: 'not set'
+//     }
+// }
+// handleButtonClick = () => {
+//     axios.get("/index").then(response => {
+//         // console.log(response.data.temperature);
+//         this.setState({
+//           weather: response.data.temperature
+//         })
+//     });
+//         };

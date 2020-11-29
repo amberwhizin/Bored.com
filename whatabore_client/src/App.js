@@ -35,14 +35,15 @@ const App = () => {
         </ListGroup.Item> */}
         <ListGroup.Item>
           <Link to="/logout">Logout</Link>
-        </ListGroup.Item>
-      </ListGroup>
+        </li>
+      </ul>
 
       <Switch>
         <Route exact path="/" component={Index} />
         <Route exact path="/secret" component={withAuth(Secret)} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
+        <Route path="/profile" component={Profile} />
         <Route exact path="/music" component={Spotify} />
         <Route exact path="/movies" component={Movie} />
         <Route exact path="/books" component={Books} />

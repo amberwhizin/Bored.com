@@ -25,7 +25,6 @@ const Spotify = () => {
   //the below is for when the token is first return we will store the token in the state
   const [token, setToken] = useState("");
   //after we get tokens we will pull a list of genres from our dropdown
-
   const [genres, setGenres] = useState({
     selectedGenre: "",
     listOfGenresFromAPI: [],

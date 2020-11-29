@@ -1,4 +1,5 @@
 const express = require("express");
+var request = require("request");
 const mongoose = require("mongoose");
 const path = require("path"); // build in module from node
 const cookieParser = require("cookie-parser");
@@ -21,7 +22,6 @@ app.use(express.static("public"));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
-
 app.use(cookieParser());
 //secret middelware
 // app.use(
@@ -54,10 +54,26 @@ mongoose.connect(
     }
   }
 );
+// mongoose.connect("mongodb://localhost:27017/recs", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 mongoose.connection.once("open", () => {
   console.log("connected to mongoose...");
 });
+
+//ROUTES//
+//weather api//
+// app.get("/index", (req, res) =>{
+//   request('http://api.weatherstack.com/current?access_key=1de0c1d768e34c9c3154e1feaedfa5be&query=Toronto', function (error, response, body){
+//     if(!error && response.statusCode == 200){
+// var parsedBody = JSON.parse(body);
+// var temperature = parsedBody['current']['temperature']
+//       res.send({temperature}) //print the google web page
+//     }
+//   })
+// });
 
 //index
 app.get("/api/home", function (req, res) {
@@ -72,11 +88,7 @@ app.get("/api/secret", withAuth, function (req, res) {
   res.sendStatus(200);
 });
 
-app.delete("/api/logout", function (req, res) {
-  req.app.destroy(() => {
-    res.redirect("/api/register");
-  });
-});
+app.get("/api/logout", function (req, res) {});
 
 // POST route to register a user
 app.post("/api/register", function (req, res) {
@@ -90,6 +102,7 @@ app.post("/api/register", function (req, res) {
       res.status(200).send("Welcome to the club!");
     }
   });
+  // console.log(req.body)
 });
 
 // app.post("/api/collect", function (req, res) {
