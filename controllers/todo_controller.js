@@ -4,7 +4,11 @@ const cors = require("cors");
 
 const TodoList = require("../models/todoList.js");
 
-const allowedURLs = ["http://localhost:3000", "https://localhost:3001"];
+const allowedURLs = [
+  "http://localhost:3000",
+  "https://localhost:3001",
+  "https://whatabore.herokuapp.com/",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -57,10 +61,10 @@ lists.put("/:id", (req, res) => {
 });
 
 // delete
-lists.delete('/:id', (req, res) => {
+lists.delete("/:id", (req, res) => {
   TodoList.findByIdAndRemove(req.params.id, (error, deletedList) => {
     if (error) {
-      res.status(400).json( {error: error.message})
+      res.status(400).json({ error: error.message });
     }
     res.status(200).json(deletedList);
   });
