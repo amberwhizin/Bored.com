@@ -152,9 +152,7 @@ if (process.env.NODE_ENV === "production") {
 
   // any other route that the iuse goes to that is NOT willing to go to one that we previously configured the we want to keep sending them a page they can see
   app.get("*", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "whatabore_client", "build", "index.html")
-    );
+    res.sendFile(path.join(__dirname, "whatabore_client/build", "index.html"));
   });
 }
 
