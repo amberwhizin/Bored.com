@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const baseUrl = "http://localhost:3001";
+// const baseUrl = "http://localhost:3001";
 
 export default class TodoList extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export default class TodoList extends Component {
       return i !== index;
     });
     const currentItem = this.state.items[index];
-    fetch(baseUrl + "/todo-lists/" + currentItem._id, {
+    fetch("/todo-lists/" + currentItem._id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default class TodoList extends Component {
     const currentItem = items[index];
     //id is being passes in with "params" from back end
     // console.log(this.state, { index, items, currentItem });
-    fetch(baseUrl + "/todo-lists/" + currentItem._id, {
+    fetch("/todo-lists/" + currentItem._id, {
       method: "PUT",
       body: JSON.stringify({
         name: currentItem.name,
@@ -89,7 +89,7 @@ export default class TodoList extends Component {
   handleSubmitOnItem = (e) => {
     e.preventDefault();
     if (!this.state.name) return;
-    fetch(baseUrl + "/todo-lists/", {
+    fetch("/todo-lists/", {
       method: "POST",
       body: JSON.stringify({
         name: this.state.name,
@@ -108,7 +108,7 @@ export default class TodoList extends Component {
   };
 
   getItem = () => {
-    fetch(baseUrl + "/todo-lists")
+    fetch("/todo-lists")
       .then((data) => {
         return data.json();
       })
