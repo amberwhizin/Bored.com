@@ -158,7 +158,7 @@ if (process.env.NODE_ENV === "production") {
 
 //controllers
 const todoListController = require("./controllers/todo_controller.js");
-app.use("/todo-lists", todoListController);
+app.use("/api/todo-lists", todoListController);
 
 const profileController = require("./controllers/profiles_controller.js");
 app.use("/profiles", profileController);
