@@ -144,6 +144,15 @@ app.get("/checkToken", withAuth, function (req, res) {
   res.sendStatus(200);
 });
 
+//controllers
+const todoListController = require("./controllers/todo_controller.js");
+app.use("/todo-lists", todoListController);
+
+const profileController = require("./controllers/profiles_controller.js");
+app.use("/profiles", profileController);
+
+app.use("/index/users", require("./controllers/users_controller"));
+
 //whenever our app is in heroku, where going to serve the build folder
 if (process.env.NODE_ENV === "production") {
   //set static folder
@@ -157,16 +166,6 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-
-//controllers
-const todoListController = require("./controllers/todo_controller.js");
-app.use("/todo-lists", todoListController);
-
-const profileController = require("./controllers/profiles_controller.js");
-app.use("/profiles", profileController);
-
-app.use("/index/users", require("./controllers/users_controller"));
-
 
 app.listen(PORT, () => {
   console.log("Listening to port", PORT);
