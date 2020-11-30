@@ -53,7 +53,7 @@ const App = () => {
     //      </Carousel.Item>
     //      </Carousel>
     // </div>
-
+<div className="navigation">
     <div className="container nav-bar">
       <ListGroup horizontal>
         <ListGroup.Item>
@@ -84,12 +84,16 @@ const App = () => {
           <Link to="/logout">Logout</Link>
         </ListGroup.Item>
       </ListGroup>
+</div>
 
+<div className="artistIMGdiv">
       <img
+      className="artistImage"
         src="https://www.healthguidance.org/wp-content/uploads/18939Bored.jpg"
         class="img-fluid"
         alt="Responsive image"
       ></img>
+</div>
 
       <Switch>
         <Route exact path="/" component={Index} />

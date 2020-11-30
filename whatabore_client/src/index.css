@@ -16,6 +16,11 @@ code {
 body .container {
   background-color:white;
   position: center;
+  max-width: 90%;
+  padding:10%;
+  z-index: 100px;
+  margin: 0 auto;
+
  }
 
 
@@ -32,23 +37,20 @@ body .container {
   }
 
 
-  .artistImage{
+  .artistIMGdiv{
     text-align: center;
-    width: 300px;
-    height: 300px;
-    box-sizing: content-box;
-  /* border-width: 8px;
-  border-style: inset;
-  border-width: 10px;
-  border-image: linear-gradient(to left bottom, #260B3C, #a053df);
-  border-image-slice: 1; */
+	box-sizing: content-box;
+	display: flex;
+	justify-content: center;
+
 
   }
 
  
-  .container nav-bar {
+  .container .nav-bar {
     text-align: center;
-    padding: 20px;
+	padding: 20px;
+	
   }
   
 
@@ -63,10 +65,7 @@ body .container {
   max-width: 70px;
 }
 
-img{
- text-align: center;
- padding-left: 100px;
-}
+
 
 .addCollect {
   color:blue;
